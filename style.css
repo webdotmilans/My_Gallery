@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* margin ya padding use krne se box ka size same rhega but content ka size kmega thats why we use this */
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;  /* it is use for content at the centre that actually it did left side margin and right margin equAL*/
+    padding: 20px;
+}
+.container h1 {
+    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+
+}
+.Gallery{
+    display: flex;  /* for space distribution of the content we make flex */
+    flex-wrap: wrap; /* if we dont use this then flex ka default axis is horizontal so horizontally aa jayega when we use this then rest jo horizontally nhi hga wo niccche aa jayega*/ 
+    justify-content: space-between;
+}
+
+.card{
+width: 32%;
+position: relative; /* hmko in images ke upr text ko overlapped krna hai so we use absolute positioning for text thats why ancient or parent element have postion non static that why we set its position static */
+margin-bottom: 20px;
+border-radius: 10px;
+overflow: hidden;
+}
+.card img{
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+    height: 100%;
+}
+.card:hover{
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.5s;
+
+}
+.card:hover img{
+    filter: grayscale(0%);
+}
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255,255,0)100% );
+    transition: 0.3s;
+
+}
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+}
